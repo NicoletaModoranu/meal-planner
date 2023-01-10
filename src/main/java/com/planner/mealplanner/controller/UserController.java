@@ -25,7 +25,7 @@ public class UserController {
 
     @GetMapping
     public ResponseEntity<List<UserDTO>> all() {
-        return new ResponseEntity<>(userService.getAllUsers().stream().map(user -> userMapper.userToUserDTO(user)).collect(Collectors.toList()), HttpStatus.OK);
+        return new ResponseEntity<>(userService.getAllUsers().stream().map(user -> userMapper.userToUserDTO(user)).toList(), HttpStatus.OK);
     }
 
     @PostMapping
